@@ -29,9 +29,8 @@ export const App = () => {
       <ContactsForm />
 
       <h2>Contacts</h2>
-      <ContactsFilter />
 
-      {isLoading ? (
+      {isLoading && (
         <ThreeDots
           height="150"
           width="300"
@@ -40,10 +39,16 @@ export const App = () => {
           ariaLabel="three-dots-loading"
           visible={true}
         />
-      ) : (
-        <ContactsList />
       )}
-      {contacts.length === 0 && (
+
+      {contacts.length > 0 && isLoading === false && (
+        <>
+          <ContactsFilter />
+          <ContactsList />
+        </>
+      )}
+
+      {contacts.length === 0 && isLoading === false && (
         <p>
           Phonebook is empty (: <br />
           Please add some contacts
