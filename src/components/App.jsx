@@ -43,7 +43,12 @@ export const App = () => {
       ) : (
         <ContactsList />
       )}
-      {contacts.length === 0 && <p>There is no contacts to show (:</p>}
+      {contacts.length === 0 && (
+        <p>
+          Phonebook is empty (: <br />
+          Please add some contacts
+        </p>
+      )}
 
       <Toaster />
     </AppContainer>
