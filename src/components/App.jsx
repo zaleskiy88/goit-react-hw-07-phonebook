@@ -41,9 +41,14 @@ export const App = () => {
         />
       )}
 
-      {contacts.length > 0 && isLoading === false && (
+      {contacts.length > 1 && isLoading === false && (
         <>
           <ContactsFilter />
+        </>
+      )}
+
+      {contacts.length > 0 && isLoading === false && (
+        <>
           <ContactsList />
         </>
       )}
