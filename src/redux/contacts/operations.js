@@ -33,7 +33,7 @@ export const addContact = createAsyncThunk(
   async ({ name, number }, thunkAPI) => {
     try {
       const res = await contactsAPI.post('/items', { name, number });
-      toast.success(`Contact ${name} was added!`);
+      toast.success(`${name} contact was added!`);
       return res.data;
     } catch (error) {
       errorMessageHAndler(error.message);
@@ -47,7 +47,7 @@ export const deleteContact = createAsyncThunk(
   async ({ id, name }, thunkAPI) => {
     try {
       const res = await contactsAPI.delete(`/items/${id}`);
-      toast.success(`Contact ${name} was deleted!`);
+      toast.success(`${name} contact was deleted!`);
       return res.data;
     } catch (error) {
       errorMessageHAndler(error.message);
